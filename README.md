@@ -2,6 +2,7 @@
 
 Lightweight AI gateway for Node.js — route requests across multiple LLM providers, failover automatically, control budgets, and log every call. Zero runtime dependencies.
 
+[![CI](https://github.com/hyxnj666-creator/ai-gateway-lite/actions/workflows/ci.yml/badge.svg)](https://github.com/hyxnj666-creator/ai-gateway-lite/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue)](https://www.typescriptlang.org/)
 [![Node](https://img.shields.io/badge/Node.js-%3E%3D18-green)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
