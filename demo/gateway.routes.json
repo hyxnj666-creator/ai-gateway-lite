@@ -1,0 +1,43 @@
+{
+  "rules": [
+    {
+      "name": "premium-complex",
+      "priority": 100,
+      "match": { "taskType": "complex", "userTier": "premium" },
+      "target": {
+        "provider": "anthropic-main",
+        "model": "claude-sonnet-4-20250514",
+        "fallbackChain": "complex-fallback"
+      },
+      "constraints": { "maxCostUsd": 0.5 }
+    },
+    {
+      "name": "default-chat",
+      "priority": 10,
+      "match": {},
+      "target": {
+        "provider": "openai-main",
+        "model": "gpt-4o-mini",
+        "fallbackChain": "default-fallback"
+      },
+      "constraints": { "maxCostUsd": 0.1 }
+    }
+  ],
+  "fallbackChains": [
+    {
+      "name": "complex-fallback",
+      "steps": [
+        { "provider": "anthropic-main", "model": "claude-sonnet-4-20250514" },
+        { "provider": "openai-main", "model": "gpt-4o", "when": ["timeout", "provider_error"] },
+        { "provider": "openrouter-fallback", "when": ["timeout", "rate_limit", "provider_error"] }
+      ]
+    },
+    {
+      "name": "default-fallback",
+      "steps": [
+        { "provider": "openai-main", "model": "gpt-4o-mini" },
+        { "provider": "openrouter-fallback", "when": ["timeout", "rate_limit", "provider_error"] }
+      ]
+    }
+  ]
+}

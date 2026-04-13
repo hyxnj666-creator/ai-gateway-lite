@@ -1,0 +1,23 @@
+[
+  {
+    "name": "global-daily",
+    "scope": { "type": "global" },
+    "window": "day",
+    "limits": {
+      "maxTotalTokens": 1000000,
+      "maxCostUsd": 10.0,
+      "warnAt": 0.8
+    },
+    "enforcement": "hard"
+  },
+  {
+    "name": "per-request-guard",
+    "scope": { "type": "global" },
+    "window": "request",
+    "limits": {
+      "maxInputTokens": 100000,
+      "maxCostUsd": 1.0
+    },
+    "enforcement": "hard"
+  }
+]

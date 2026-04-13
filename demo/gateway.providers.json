@@ -1,0 +1,28 @@
+[
+  {
+    "name": "openai-main",
+    "provider": "openai",
+    "models": ["gpt-4o", "gpt-4o-mini"],
+    "defaultModel": "gpt-4o-mini",
+    "timeoutMs": 30000,
+    "retry": { "maxAttempts": 2, "backoffMs": 1000 },
+    "auth": { "type": "apiKey", "envVar": "OPENAI_API_KEY" }
+  },
+  {
+    "name": "anthropic-main",
+    "provider": "anthropic",
+    "models": ["claude-sonnet-4-20250514", "claude-haiku-4-20250414"],
+    "defaultModel": "claude-sonnet-4-20250514",
+    "timeoutMs": 60000,
+    "retry": { "maxAttempts": 1, "backoffMs": 2000 },
+    "auth": { "type": "apiKey", "envVar": "ANTHROPIC_API_KEY" }
+  },
+  {
+    "name": "openrouter-fallback",
+    "provider": "openrouter",
+    "models": ["openai/gpt-4o-mini", "anthropic/claude-haiku-4-20250414"],
+    "defaultModel": "openai/gpt-4o-mini",
+    "timeoutMs": 30000,
+    "auth": { "type": "apiKey", "envVar": "OPENROUTER_API_KEY" }
+  }
+]

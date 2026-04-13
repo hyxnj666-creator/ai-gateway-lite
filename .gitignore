@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables (contain API keys)
+.env
+.env.local
+.env.*.local
+
+# Test coverage
+coverage/
+
+# IDE / Editor
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Lock files (keep pnpm-lock.yaml, ignore npm's)
+package-lock.json
+
+# Debug logs
+npm-debug.log*
+pnpm-debug.log*
+
+# Internal dev docs (not for public repo)
+MEMORY.md
+DEVELOPMENT.md
+RELEASE-CHECKLIST.md
