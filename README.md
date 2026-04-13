@@ -6,6 +6,8 @@ Lightweight AI gateway for Node.js — route requests across multiple LLM provid
 [![Node](https://img.shields.io/badge/Node.js-%3E%3D18-green)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+**English** | [中文](./README.zh-CN.md)
+
 ## Why
 
 If you're calling multiple LLM providers (OpenAI, Anthropic, OpenRouter, etc.) you need to solve the same problems every time:
